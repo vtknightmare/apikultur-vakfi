@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vtknightmare.github.io/apikultur-vakfi/sitemap.xml
