@@ -45,6 +45,8 @@
   }
 }
 </script>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -315,6 +317,8 @@
   .js .reveal{opacity:0; transform:translateY(28px); transition:opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1)}
   .js .reveal.in{opacity:1; transform:none}
   a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2.5px solid var(--amber); outline-offset:3px; border-radius:6px}
+  .skip-link{position:absolute; left:-9999px; top:0; z-index:100; background:var(--charcoal); color:var(--ecru); padding:11px 20px; border-radius:0 0 12px 0; font-family:'Poppins',sans-serif; font-size:13px; font-weight:500}
+  .skip-link:focus{left:0}
 
   @media(max-width:980px){
     .comb,.proj-grid{grid-template-columns:1fr 1fr}
@@ -351,6 +355,8 @@
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#top" data-i18n="skip_link">İçeriğe atla</a>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -396,14 +402,14 @@
       <div class="nav-item"><a href="#iletisim" class="nav-top" data-i18n="nav_contact">İletişim</a></div>
     </nav>
     <div class="nav-right">
-      <div class="lang" id="lang"><button data-lang="tr" class="active">TR</button><button data-lang="en">EN</button></div>
+      <div class="lang" id="lang"><button data-lang="tr" class="active" aria-pressed="true">TR</button><button data-lang="en" aria-pressed="false">EN</button></div>
       <a href="#destek" class="btn btn-primary" data-i18n="nav_support">Bağış Yap</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<section class="hero" id="top" style="padding:0">
+<section class="hero" id="top" style="padding:0" tabindex="-1">
   <div class="hero-hc"></div>
   <div class="wrap hero-inner">
     <span class="eyebrow od" data-i18n="hero_eyebrow">Apikültür Vakfı · Doğayı Geleceğe Taşır</span>
@@ -795,7 +801,7 @@
         <div class="ci"><span class="lbl" data-i18n="con_k1">Adres</span>Merkez Mh. İzzetpaşa Sk. No:14, 34384 Şişli / İstanbul</div>
         <a class="ci" href="tel:+902122220222"><span class="lbl" data-i18n="con_k2">Telefon</span>+90 212 222 0 222</a>
         <a class="ci" href="mailto:info@apikulturvakfi.org"><span class="lbl" data-i18n="con_k3">E-posta</span>info@apikulturvakfi.org</a>
-        <a class="ci" href="https://apikulturvakfi.com"><span class="lbl" data-i18n="con_k4">Web</span>apikulturvakfi.com</a>
+        <a class="ci" href="https://apikulturvakfi.com" rel="noopener"><span class="lbl" data-i18n="con_k4">Web</span>apikulturvakfi.com</a>
       </div>
       <div class="foot-col">
         <div class="foot-h" data-i18n="foot_links_h">Site Haritası</div>
@@ -825,6 +831,8 @@
 <script>
 const I18N = {
   tr:{
+    skip_link:"İçeriğe atla",
+    doc_title:"Apikültür Vakfı — Doğayı Geleceğe Taşır",
     nav_about:"Hakkımızda", nav_activity:"Ne Yapıyoruz", nav_projects:"Projeler", nav_academy:"Akademi & Bilim", nav_std:"Standartlar",
     nav_youth:"Gençlik Kulüpleri", nav_intl:"Uluslararası", nav_gov:"Yönetim", nav_contact:"İletişim", nav_support:"Bağış Yap",
     cat_vakif:"Vakıf", cat_faaliyet:"Çalışma Alanları", cat_akademi:"Akademi & Bilim", nav_manifesto:"Manifesto",
@@ -987,6 +995,8 @@ const I18N = {
     foot_copy:"© 2026 Apikültür Vakfı. Kâr amacı gütmeyen, kamu yararı önceliğiyle çalışan bir vakıftır."
   },
   en:{
+    skip_link:"Skip to content",
+    doc_title:"Apiculture Foundation — Carrying Nature to the Future",
     nav_about:"About", nav_activity:"What We Do", nav_projects:"Projects", nav_academy:"Academy & Science", nav_std:"Standards",
     nav_youth:"Youth Clubs", nav_intl:"International", nav_gov:"Governance", nav_contact:"Contact", nav_support:"Donate",
     cat_vakif:"Foundation", cat_faaliyet:"Our Work", cat_akademi:"Academy & Science", nav_manifesto:"Manifesto",
@@ -1153,12 +1163,14 @@ function applyLang(lang){
   document.documentElement.lang=lang;
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(I18N[lang][k]!==undefined) el.textContent=I18N[lang][k];});
   document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.getAttribute('data-i18n-html'); if(I18N[lang][k]!==undefined) el.innerHTML=I18N[lang][k];});
-  document.querySelectorAll('#lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+  document.querySelectorAll('#lang button').forEach(b=>{const on=b.dataset.lang===lang; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on);});
+  document.title=I18N[lang].doc_title;
+  try{localStorage.setItem('apikultur-lang', lang);}catch(e){}
 }
 document.getElementById('lang').addEventListener('click', e=>{ if(e.target.dataset.lang) applyLang(e.target.dataset.lang); });
 const menuToggle=document.getElementById('menuToggle'), navLinks=document.getElementById('navLinks');
-menuToggle.addEventListener('click', ()=>navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>navLinks.classList.remove('open')));
+menuToggle.addEventListener('click', ()=>{const open=navLinks.classList.toggle('open'); menuToggle.setAttribute('aria-expanded', open);});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{navLinks.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false');}));
 const io=new IntersectionObserver((es)=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.1, rootMargin:'0px 0px -7% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 (function(){
@@ -1171,7 +1183,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     d.style.opacity=(.2+Math.random()*.4).toFixed(2); hero.appendChild(d);}
   const st=document.createElement('style'); st.textContent='@keyframes floatUp{0%{transform:translateY(0) translateX(0)}100%{transform:translateY(-340px) translateX(40px);opacity:0}}'; document.head.appendChild(st);
 })();
-applyLang('tr');
+applyLang((function(){try{const s=localStorage.getItem('apikultur-lang'); return (s==='tr'||s==='en')?s:'tr';}catch(e){return 'tr';}})());
 </script>
 </body>
 </html>
