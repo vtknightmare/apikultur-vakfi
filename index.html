@@ -191,7 +191,10 @@
   .pcard .pcat{font-family:'Poppins',sans-serif; font-size:10.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--terra)}
   .pcard h3{font-size:17px; margin:12px 0 10px; color:var(--ink); line-height:1.28; max-width:92%}
   .pcard p{font-size:14.5px; color:var(--ink-2); flex:1}
-  .pcard .pstatus{margin-top:18px; align-self:flex-start; font-family:'Poppins',sans-serif; font-size:10.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); border:1px solid var(--line); border-radius:99px; padding:6px 12px}
+  .pmeta{display:flex; flex-wrap:wrap; gap:5px 14px; margin-top:12px; padding-top:12px; border-top:1px solid var(--line-2)}
+  .pmeta span{font-size:12px; color:var(--ink-2); display:inline-flex; align-items:center; gap:6px}
+  .pmeta span::before{content:""; width:7px; height:8px; flex:none; background:var(--amber); -webkit-clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .pcard .pstatus{margin-top:14px; align-self:flex-start; font-family:'Poppins',sans-serif; font-size:10.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); border:1px solid var(--line); border-radius:99px; padding:6px 12px}
   .pcard .pstatus.live{background:var(--terra); color:#fff; border-color:var(--terra)}
   .pcard.linked{cursor:pointer}
 
@@ -297,6 +300,18 @@
   .stance .tr-note{margin-top:12px; font-size:12.5px; color:rgba(249,239,227,.55)}
 
   .support{background:var(--ecru-2)}
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:22px}
+  .step{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:28px}
+  .step .sn{font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; width:34px; height:34px; display:flex; align-items:center; justify-content:center; background:var(--terra); color:#fff; border-radius:99px; margin-bottom:14px}
+  .step h3{font-size:14px; margin-bottom:8px; color:var(--ink)}
+  .step p{font-size:14px; color:var(--ink-2)}
+  .step-cta{display:flex; gap:8px; margin-top:14px; flex-wrap:wrap}
+  .step-cta .btn{padding:9px 14px; font-size:12px}
+  .md16{display:flex; gap:16px; align-items:center; background:var(--charcoal); color:var(--on-dark); border-radius:var(--r); padding:22px 26px; margin-bottom:30px}
+  .md16 .hx{width:15px; height:17px; background:var(--amber); flex:none; -webkit-clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .md16 p{font-size:15px; color:var(--on-dark-soft)}
+  .md16 b{color:var(--amber)}
+  .md16 a{color:var(--ecru); text-decoration:underline; text-underline-offset:3px}
   .ms-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:8px}
   .ms{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:34px; box-shadow:var(--shadow)}
   .ms .label{font-family:'Poppins',sans-serif; font-size:11.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--terra)}
@@ -358,7 +373,8 @@
     .nav-links.open .dropdown a small{display:none}
   }
   @media(max-width:820px){
-    .about-grid,.ar-grid,.youth-2,.intl-grid,.gov-grid,.ms-grid,.contact-inner,.km,.std-wrap{grid-template-columns:1fr; gap:28px}
+    .about-grid,.ar-grid,.youth-2,.intl-grid,.gov-grid,.ms-grid,.contact-inner,.km,.std-wrap,.steps{grid-template-columns:1fr; gap:28px}
+    .md16{flex-direction:column; align-items:flex-start; gap:10px}
     .vals-grid{grid-template-columns:1fr 1fr}
     .man-grid{grid-template-columns:1fr; gap:0 0}
     .stats,.istats{grid-template-columns:1fr 1fr}
@@ -567,12 +583,12 @@
       <p data-i18n="proj_sub">Tamamlanan, yürüyen ve geliştirilen projelerimizden bir seçki.</p>
     </div>
     <div class="proj-grid">
-      <div class="pcard reveal"><img class="pimg" src="assets/img/p1-bee-friend.jpg" loading="lazy" alt="Gün batımında arılarla dolu petek çerçevesini tutan el" data-i18n-alt="img_p1"><span class="pnum">01</span><div class="pcat" data-i18n="proj1c">Eğitim & Farkındalık</div><h3 data-i18n="proj1t">Arı Dostum Olur Musun?</h3><p data-i18n="proj1d">Kartal'da 30 okulda 14.895 öğrenciye ulaşan eğitim ve farkındalık iş birliği (2024–2025).</p><span class="pstatus" data-i18n="st_done">Tamamlandı</span></div>
-      <a href="#genclik" class="pcard linked reveal"><img class="pimg" src="assets/img/p2-club-frame.jpg" loading="lazy" alt="Bal petekleriyle dolu ahşap çerçeveler" data-i18n-alt="img_p2"><span class="pnum">02</span><div class="pcat" data-i18n="proj2c">Gençlik · Erasmus+</div><h3 data-i18n="proj2t">Apikültür Gençlik Kulüpleri</h3><p data-i18n="proj2d">Okullarda genç arıcı kulüpleri; ICYB iş birliğiyle Türkiye'yi IMYB'de temsil. İncele →</p><span class="pstatus live" data-i18n="st_live">Başvurular açık</span></a>
-      <div class="pcard reveal"><img class="pimg" src="assets/img/p3-corridor-lavender.jpg" loading="lazy" alt="Ağaçlara uzanan mor lavanta tarlası" data-i18n-alt="img_p3"><span class="pnum">03</span><div class="pcat" data-i18n="proj3c">Polinasyon & Tarım</div><h3 data-i18n="proj3t">Türkiye Arı Koridoru</h3><p data-i18n="proj3d">Belediyeler ve kamuyla yol kenarlarını ve boş alanları polinatör dostu koridorlara dönüştürmek.</p><span class="pstatus" data-i18n="st_plan">Planlama</span></div>
-      <div class="pcard reveal"><img class="pimg" src="assets/img/p4-women-planting.jpg" loading="lazy" alt="Beyaz koruyucu giysili arıcı kovan başında" data-i18n-alt="img_p4"><span class="pnum">04</span><div class="pcat" data-i18n="proj4c">Sosyal Kalkınma</div><h3 data-i18n="proj4t">Kadın ve Genç Arıcı Programı</h3><p data-i18n="proj4d">Kadın ve genç arıcılar için eğitim, mentorluk, kovan desteği ve girişimcilik.</p><span class="pstatus" data-i18n="st_dev">Geliştirme</span></div>
-      <div class="pcard reveal"><img class="pimg" src="assets/img/p5-honey-jar.jpg" loading="lazy" alt="Bal kavanozuna bal damlatan ahşap kaşık" data-i18n-alt="img_p5"><span class="pnum">05</span><div class="pcat" data-i18n="proj5c">Kalite & Miras</div><h3 data-i18n="proj5t">Coğrafi İşaret ve Yerel Değerler</h3><p data-i18n="proj5d">Yerel arı ürünlerinin coğrafi işaret tesciliyle korunması ve uluslararası pazarda değer kazanması.</p><span class="pstatus" data-i18n="st_dev">Geliştirme</span></div>
-      <div class="pcard reveal"><img class="pimg" src="assets/img/p6-meadow.jpg" loading="lazy" alt="Altın ışıkta kovana dönen arılar" data-i18n-alt="img_p6"><span class="pnum">06</span><div class="pcat" data-i18n="proj6c">Bilim & İyi Oluş</div><h3 data-i18n="proj6t">Apiterapi ve Apiturizm Araştırmaları</h3><p data-i18n="proj6d">Arı ürünlerinin sağlık etkilerine dair bilimsel çalışmalar; doğa temelli iyi oluş ve apiturizm modelleri.</p><span class="pstatus" data-i18n="st_research">Araştırma</span></div>
+      <div class="pcard reveal"><img class="pimg" src="assets/img/p1-bee-friend.jpg" loading="lazy" alt="Gün batımında arılarla dolu petek çerçevesini tutan el" data-i18n-alt="img_p1"><span class="pnum">01</span><div class="pcat" data-i18n="proj1c">Eğitim & Farkındalık</div><h3 data-i18n="proj1t">Arı Dostum Olur Musun?</h3><p data-i18n="proj1d">Kartal'da 30 okulda 14.895 öğrenciye ulaşan eğitim ve farkındalık iş birliği (2024–2025).</p><div class="pmeta"><span data-i18n="pm1a">Kartal · 30 okul · 14.895 öğrenci</span><span data-i18n="pm1b">2024–2025 · Kartal Kaymakamlığı iş birliği</span></div><span class="pstatus" data-i18n="st_done">Tamamlandı</span></div>
+      <a href="#genclik" class="pcard linked reveal"><img class="pimg" src="assets/img/p2-club-frame.jpg" loading="lazy" alt="Bal petekleriyle dolu ahşap çerçeveler" data-i18n-alt="img_p2"><span class="pnum">02</span><div class="pcat" data-i18n="proj2c">Gençlik · Erasmus+</div><h3 data-i18n="proj2t">Apikültür Gençlik Kulüpleri</h3><p data-i18n="proj2d">Okullarda genç arıcı kulüpleri; ICYB iş birliğiyle Türkiye'yi IMYB'de temsil. İncele →</p><div class="pmeta"><span data-i18n="pm2a">Liseler · 12–18 yaş</span><span data-i18n="pm2b">ICYB · Erasmus+ · Başvurular 19.05.2026'da açıldı</span></div><span class="pstatus live" data-i18n="st_live">Başvurular açık</span></a>
+      <div class="pcard reveal"><img class="pimg" src="assets/img/p3-corridor-lavender.jpg" loading="lazy" alt="Ağaçlara uzanan mor lavanta tarlası" data-i18n-alt="img_p3"><span class="pnum">03</span><div class="pcat" data-i18n="proj3c">Polinasyon & Tarım</div><h3 data-i18n="proj3t">Türkiye Arı Koridoru</h3><p data-i18n="proj3d">Belediyeler ve kamuyla yol kenarlarını ve boş alanları polinatör dostu koridorlara dönüştürmek.</p><div class="pmeta"><span data-i18n="pm3a">Belediyeler ve kamu iş birliği</span><span data-i18n="pm3b">Türkiye geneli (hedef)</span></div><span class="pstatus" data-i18n="st_plan">Planlama</span></div>
+      <div class="pcard reveal"><img class="pimg" src="assets/img/p4-women-planting.jpg" loading="lazy" alt="Beyaz koruyucu giysili arıcı kovan başında" data-i18n-alt="img_p4"><span class="pnum">04</span><div class="pcat" data-i18n="proj4c">Sosyal Kalkınma</div><h3 data-i18n="proj4t">Kadın ve Genç Arıcı Programı</h3><p data-i18n="proj4d">Kadın ve genç arıcılar için eğitim, mentorluk, kovan desteği ve girişimcilik.</p><div class="pmeta"><span data-i18n="pm4a">Kadın ve genç arıcılar</span><span data-i18n="pm4b">Eğitim · Mentorluk · Kovan desteği · Girişimcilik</span></div><span class="pstatus" data-i18n="st_dev">Geliştirme</span></div>
+      <div class="pcard reveal"><img class="pimg" src="assets/img/p5-honey-jar.jpg" loading="lazy" alt="Bal kavanozuna bal damlatan ahşap kaşık" data-i18n-alt="img_p5"><span class="pnum">05</span><div class="pcat" data-i18n="proj5c">Kalite & Miras</div><h3 data-i18n="proj5t">Coğrafi İşaret ve Yerel Değerler</h3><p data-i18n="proj5d">Yerel arı ürünlerinin coğrafi işaret tesciliyle korunması ve uluslararası pazarda değer kazanması.</p><div class="pmeta"><span data-i18n="pm5a">Yerel arı ürünleri</span><span data-i18n="pm5b">Tescil + uluslararası pazar değeri</span></div><span class="pstatus" data-i18n="st_dev">Geliştirme</span></div>
+      <div class="pcard reveal"><img class="pimg" src="assets/img/p6-meadow.jpg" loading="lazy" alt="Altın ışıkta kovana dönen arılar" data-i18n-alt="img_p6"><span class="pnum">06</span><div class="pcat" data-i18n="proj6c">Bilim & İyi Oluş</div><h3 data-i18n="proj6t">Apiterapi ve Apiturizm Araştırmaları</h3><p data-i18n="proj6d">Arı ürünlerinin sağlık etkilerine dair bilimsel çalışmalar; doğa temelli iyi oluş ve apiturizm modelleri.</p><div class="pmeta"><span data-i18n="pm6a">Üniversite iş birlikleri</span><span data-i18n="pm6b">Doğa temelli iyi oluş modelleri</span></div><span class="pstatus" data-i18n="st_research">Araştırma</span></div>
     </div>
   </div>
 </section>
@@ -808,6 +824,14 @@
       <h2 data-i18n="sup_title">Geleceğe bir kovan bırakın.</h2>
       <p data-i18n="sup_sub">Sürdürülebilir bir ekosistem ve güçlü bir topluluk için yanımızda olun.</p>
     </div>
+    <div class="steps reveal">
+      <div class="step"><span class="sn">1</span><h3 data-i18n="step1t">İletişime Geçin</h3><p data-i18n="step1d">E-posta ya da telefonla ulaşın; ekibimiz aynı hafta içinde dönüş yapar.</p>
+        <div class="step-cta"><a class="btn btn-primary" href="mailto:info@apikulturvakfi.org?subject=Ba%C4%9F%C4%B1%C5%9F%20ve%20Destek" data-i18n="step_mail">E-posta Gönder</a><a class="btn btn-ghost" href="tel:+902122220222">+90 212 222 0 222</a></div></div>
+      <div class="step"><span class="sn">2</span><h3 data-i18n="step2t">Destek Alanınızı Seçin</h3><p data-i18n="step2d">Öğrenci bursu, kovan destek programı, araştırma fonu, gençlik kulübü ya da proje sponsorluğu — katkınızı yönlendirmek istediğiniz alanı birlikte belirleriz.</p></div>
+      <div class="step"><span class="sn">3</span><h3 data-i18n="step3t">Kayıt ve Raporlama</h3><p data-i18n="step3d">Her katkı kayıt altına alınır; etkisini Şeffaflık Merkezi'nde yayımlanacak faaliyet ve mali raporlarla takip edersiniz.</p></div>
+    </div>
+    <div class="md16 reveal"><span class="hx"></span><p data-i18n-html="md16_note">Vakıf senedimizin 16. maddesi gereği <b>yıllık brüt gelirin en az üçte ikisi</b> doğrudan vakıf amaçlarına tahsis edilir. <a href="senet.html">Senedin tam metnini inceleyin →</a></p></div>
+    <!-- IBAN/banka hesap bilgileri netleştiğinde buraya hesap kartı eklenecek (REQ-SUPPORT-001 AC-04) -->
     <div class="ms-grid">
       <div class="ms reveal">
         <div class="label" data-i18n="net_label">Destekçi Ağı</div>
@@ -977,6 +1001,12 @@ const I18N = {
     proj4c:"Sosyal Kalkınma", proj4t:"Kadın ve Genç Arıcı Programı", proj4d:"Kadın ve genç arıcılar için eğitim, mentorluk, kovan desteği ve girişimcilik.",
     proj5c:"Kalite & Miras", proj5t:"Coğrafi İşaret ve Yerel Değerler", proj5d:"Yerel arı ürünlerinin coğrafi işaret tesciliyle korunması ve uluslararası pazarda değer kazanması.",
     proj6c:"Bilim & İyi Oluş", proj6t:"Apiterapi ve Apiturizm Araştırmaları", proj6d:"Arı ürünlerinin sağlık etkilerine dair bilimsel çalışmalar; doğa temelli iyi oluş ve apiturizm modelleri.",
+    pm1a:"Kartal · 30 okul · 14.895 öğrenci", pm1b:"2024–2025 · Kartal Kaymakamlığı iş birliği",
+    pm2a:"Liseler · 12–18 yaş", pm2b:"ICYB · Erasmus+ · Başvurular 19.05.2026'da açıldı",
+    pm3a:"Belediyeler ve kamu iş birliği", pm3b:"Türkiye geneli (hedef)",
+    pm4a:"Kadın ve genç arıcılar", pm4b:"Eğitim · Mentorluk · Kovan desteği · Girişimcilik",
+    pm5a:"Yerel arı ürünleri", pm5b:"Tescil + uluslararası pazar değeri",
+    pm6a:"Üniversite iş birlikleri", pm6b:"Doğa temelli iyi oluş modelleri",
 
     youth_eyebrow:"Öne Çıkan Program · Erasmus+ & ESC destekli",
     youth_title:"Geleceğin Kraliçe ve İşçi Arıları",
@@ -1067,6 +1097,11 @@ const I18N = {
 
     sup_eyebrow:"Katıl & Destek Ol", sup_title:"Geleceğe bir kovan bırakın.",
     sup_sub:"Sürdürülebilir bir ekosistem ve güçlü bir topluluk için yanımızda olun.",
+    step1t:"İletişime Geçin", step1d:"E-posta ya da telefonla ulaşın; ekibimiz aynı hafta içinde dönüş yapar.",
+    step_mail:"E-posta Gönder",
+    step2t:"Destek Alanınızı Seçin", step2d:"Öğrenci bursu, kovan destek programı, araştırma fonu, gençlik kulübü ya da proje sponsorluğu — katkınızı yönlendirmek istediğiniz alanı birlikte belirleriz.",
+    step3t:"Kayıt ve Raporlama", step3d:"Her katkı kayıt altına alınır; etkisini Şeffaflık Merkezi'nde yayımlanacak faaliyet ve mali raporlarla takip edersiniz.",
+    md16_note:"Vakıf senedimizin 16. maddesi gereği <b>yıllık brüt gelirin en az üçte ikisi</b> doğrudan vakıf amaçlarına tahsis edilir. <a href='senet.html'>Senedin tam metnini inceleyin →</a>",
     net_label:"Destekçi Ağı", net_title:"Ağımıza katılın.",
     net_text:"Bilgi Merkezi'ne erişim, etkinlik davetleri, uluslararası ağ ve eğitim avantajları.",
     net1:"Bireysel Destekçi", net2:"Kurumsal Paydaş", net3:"Akademik Ağ", net4:"Gönüllü", net5:"Genç Arıcı Topluluğu",
@@ -1162,6 +1197,12 @@ const I18N = {
     proj4c:"Social Development", proj4t:"Women & Young Beekeepers", proj4d:"Training, mentorship, hive support and entrepreneurship for women and young beekeepers.",
     proj5c:"Quality & Heritage", proj5t:"Geographical Indication & Local Value", proj5d:"Protecting local bee products through geographical indication and building international value.",
     proj6c:"Science & Well-being", proj6t:"Apitherapy & Apitourism Research", proj6d:"Scientific work on bee products' health effects; nature-based well-being and apitourism models.",
+    pm1a:"Kartal · 30 schools · 14,895 students", pm1b:"2024–2025 · with Kartal District Governorate",
+    pm2a:"High schools · ages 12–18", pm2b:"ICYB · Erasmus+ · Applications opened 19.05.2026",
+    pm3a:"With municipalities & public bodies", pm3b:"Nationwide (target)",
+    pm4a:"Women & young beekeepers", pm4b:"Training · Mentorship · Hive support · Entrepreneurship",
+    pm5a:"Local bee products", pm5b:"Registration + international market value",
+    pm6a:"University collaborations", pm6b:"Nature-based well-being models",
 
     youth_eyebrow:"Flagship Program · Erasmus+ & ESC supported",
     youth_title:"The Queens and Workers of Tomorrow",
@@ -1252,6 +1293,11 @@ const I18N = {
 
     sup_eyebrow:"Join & Support", sup_title:"Leave a hive for the future.",
     sup_sub:"Stand with us for a sustainable ecosystem and a strong community.",
+    step1t:"Get in Touch", step1d:"Reach us by e-mail or phone; our team responds within the week.",
+    step_mail:"Send E-mail",
+    step2t:"Choose Your Focus", step2d:"Student scholarships, the hive support program, research funds, youth clubs or project sponsorship — we'll direct your contribution together.",
+    step3t:"Record & Reporting", step3d:"Every contribution is recorded; you can follow its impact through the activity and financial reports published in the Transparency Center.",
+    md16_note:"Under Article 16 of our charter, <b>at least two-thirds of gross annual income</b> is allocated directly to the foundation's purposes. <a href='senet.html'>Read the full charter →</a>",
     net_label:"Supporter Network", net_title:"Join our network.",
     net_text:"Access to the Knowledge Center, event invitations, international networks and education benefits.",
     net1:"Individual Supporter", net2:"Corporate Partner", net3:"Academic Network", net4:"Volunteer", net5:"Young Beekeeper Community",
