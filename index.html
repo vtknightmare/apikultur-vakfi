@@ -261,6 +261,17 @@
 
   .gov{background:var(--ecru)}
   .gov-grid{display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start}
+  .org-label{font-family:'Poppins',sans-serif; font-size:11.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--terra); margin-bottom:6px}
+  .names{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+  .names span{font-size:12px; background:var(--card); border:1px solid var(--line); color:var(--ink); padding:5px 10px; border-radius:99px}
+  .names span.chair{background:var(--amber); border-color:var(--amber); color:var(--charcoal); font-weight:500}
+  .names span.chair b{font-weight:700; letter-spacing:.04em}
+  .official{margin-top:22px; background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:26px 28px; box-shadow:var(--shadow)}
+  .official .lab{font-family:'Poppins',sans-serif; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--terra); margin-bottom:8px}
+  .official .line{display:flex; justify-content:space-between; gap:18px; padding:10px 0; border-bottom:1px solid var(--line-2); font-size:13.5px}
+  .official .line:last-child{border-bottom:none}
+  .official .k{font-family:'Poppins',sans-serif; font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); white-space:nowrap; padding-top:2px}
+  .official .v{color:var(--ink); text-align:right}
   .boards .brow{display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--line)}
   .boards .brow:last-child{border-bottom:none}
   .boards .bi{font-family:'Poppins',sans-serif; font-size:11px; font-weight:600; color:#fff; background:var(--charcoal); border-radius:7px; padding:6px 10px; height:fit-content; letter-spacing:.04em}
@@ -360,6 +371,8 @@
     .hero-inner{padding:70px 0 76px}
     .contact-box .line{flex-direction:column; gap:3px}
     .contact-box .line .v{text-align:left}
+    .official .line{flex-direction:column; gap:3px}
+    .official .v{text-align:left}
   }
   @media(prefers-reduced-motion:reduce){
     .pollen{display:none!important}
@@ -731,12 +744,23 @@
     </div>
     <div class="gov-grid">
       <div class="boards reveal">
-        <div class="brow"><span class="bi">01</span><div><div class="bt2" data-i18n="gov_b1t">Mütevelli Heyeti</div><div class="bd" data-i18n="gov_b1d">Vakfın kurucu iradesini ve uzun vadeli yönünü temsil eder.</div></div></div>
-        <div class="brow"><span class="bi">02</span><div><div class="bt2" data-i18n="gov_b2t">Yönetim Kurulu</div><div class="bd" data-i18n="gov_b2d">Vakfın faaliyetlerini ve operasyonlarını yürütür.</div></div></div>
-        <div class="brow"><span class="bi">03</span><div><div class="bt2" data-i18n="gov_b3t">Bilim Kurulu</div><div class="bd" data-i18n="gov_b3d">Üniversite ve araştırma merkezlerinden akademisyenler.</div></div></div>
-        <div class="brow"><span class="bi">04</span><div><div class="bt2" data-i18n="gov_b4t">Danışma Kurulu</div><div class="bd" data-i18n="gov_b4d">Ulusal ve uluslararası alanında uzman danışmanlar.</div></div></div>
+        <div class="org-label" data-i18n="gov_organs_l">Vakfın Organları · Senet Md.7</div>
+        <div class="brow"><span class="bi">01</span><div>
+          <div class="bt2" data-i18n="gov_b1t">Mütevelli Heyeti</div>
+          <div class="bd" data-i18n="gov_b1d">Vakfın en yüksek karar organı; kurucu iradeyi ve uzun vadeli yönü temsil eder (Md.8–9).</div>
+          <div class="names"><span>Muzaffer Yıldırım</span><span>Mehmet Hacı Hanefioğlu</span><span>İsfendiyar Üzümcü</span><span>Ayşe Yıldırım</span><span>Deniz Ebru Baydar</span><span>Emre Yıldırım</span><span>Yahya Zığındere</span><span>Emir Taha Yıldırım</span><span>Okan Yılmazer</span></div>
+        </div></div>
+        <div class="brow"><span class="bi">02</span><div>
+          <div class="bt2" data-i18n="gov_b2t">Yönetim Kurulu</div>
+          <div class="bd" data-i18n="gov_b2d">Vakfın idare ve icra organı (Md.11–12). İlk yönetim kurulu, senedin Geçici 2. maddesiyle görevlendirilmiştir.</div>
+          <div class="names"><span class="chair">Muzaffer Yıldırım · <b data-i18n="gov_chair">Başkan</b></span><span>İsfendiyar Üzümcü</span><span>Faruk Canız</span><span>Emre Yıldırım</span><span>Okan Yılmazer</span><span>Balca Alper Pitch</span><span>Yankı Tandırcıoğlu</span></div>
+        </div></div>
+        <div class="org-label" style="margin-top:28px" data-i18n="gov_adv_l">Danışma Yapıları · Md.12</div>
+        <div class="brow"><span class="bi">D1</span><div><div class="bt2" data-i18n="gov_b3t">Bilim Kurulu</div><div class="bd" data-i18n="gov_b3d">Üniversite ve araştırma merkezlerinden akademisyenler. Yönetim Kurulu'nun oluşturduğu yardımcı bir yapıdır; senet organı değildir.</div></div></div>
+        <div class="brow"><span class="bi">D2</span><div><div class="bt2" data-i18n="gov_b4t">Danışma Kurulu</div><div class="bd" data-i18n="gov_b4d">Ulusal ve uluslararası uzman danışmanlar. Yönetim Kurulu'nun oluşturduğu yardımcı bir yapıdır; senet organı değildir.</div></div></div>
       </div>
-      <div class="stance reveal">
+      <div class="reveal">
+      <div class="stance">
         <div class="row"><span class="chip no" data-i18n="gov_no1">Ticaret yapmaz</span><span class="chip no" data-i18n="gov_no2">Kâr amacı gütmez</span></div>
         <div class="row"><span class="chip yes" data-i18n="gov_yes1">Standart koyar</span><span class="chip yes" data-i18n="gov_yes2">Model üretir</span><span class="chip yes" data-i18n="gov_yes3">Eğitir</span><span class="chip yes" data-i18n="gov_yes4">Yaygınlaştırır</span></div>
         <p data-i18n="gov_stance">Apikültür Vakfı'nın konumu nettir: piyasanın bir oyuncusu değil, sektörün ortak zemini olmak. Bu bağımsızlık, hem güvenilirliğin hem kamu yararının temelidir.</p>
@@ -745,6 +769,14 @@
           <div class="pp"><a href="senet.html" data-i18n="gov_tr0">Vakıf Senedi →</a><span data-i18n="gov_tr1">Faaliyet Raporları</span><span data-i18n="gov_tr2">Mali Raporlar</span><span data-i18n="gov_tr3">Bağımsız Denetim</span><span data-i18n="gov_tr4">Etik İlkeler</span></div>
           <p class="tr-note" data-i18n="gov_tr_note">Faaliyet ve mali raporlar, ilk hesap dönemini takiben bu sayfada yayımlanacaktır.</p>
         </div>
+      </div>
+      <div class="official">
+        <div class="lab" data-i18n="off_l">Resmi Bilgiler</div>
+        <div class="line"><span class="k" data-i18n="off_k1">Kurucu</span><span class="v" data-i18n="off_v1">Muzaffer Yıldırım (Md.19)</span></div>
+        <div class="line"><span class="k" data-i18n="off_k2">Kuruluş Malvarlığı</span><span class="v" data-i18n="off_v2">500.000 TL (Md.6)</span></div>
+        <div class="line"><span class="k" data-i18n="off_k3">Tescilli Merkez</span><span class="v" data-i18n="off_v3">Beylikdüzü OSB Mah. Birlik San. Sit. Birlik 2 İş Merkezi Kat:3 No:51, Beylikdüzü / İstanbul (Md.2)</span></div>
+        <div class="line"><span class="k" data-i18n="off_k4">Yönetim Ofisi</span><span class="v">Merkez Mh. İzzetpaşa Sk. No:14, 34384 Şişli / İstanbul</span></div>
+      </div>
       </div>
     </div>
   </div>
@@ -983,11 +1015,19 @@ const I18N = {
     imp_t6:"Yayınlanan teknik rehber", imp_t7:"Kurulan gençlik kulübü", imp_t8:"Dijital platform kullanıcısı", imp_t9:"Dijital eğitim katılımcısı", imp_t10:"Uluslararası iş birliği",
 
     gov_eyebrow:"Yönetim & Şeffaflık", gov_title:"Gücümüzü şeffaflıktan alıyoruz.",
-    gov_sub:"Apikültür Vakfı, piyasada rekabet eden ticari bir oyuncu değil; sektörün üzerine basabileceği sağlam, bağımsız ve bilimsel bir zemindir. Mütevelli heyetinden bilim ve danışma kurullarına, tek amacımız kamu yararı üretmek ve standartları belirlemektir.",
-    gov_b1t:"Mütevelli Heyeti", gov_b1d:"Vakfın kurucu iradesini ve uzun vadeli yönünü temsil eder.",
-    gov_b2t:"Yönetim Kurulu", gov_b2d:"Vakfın faaliyetlerini ve operasyonlarını yürütür.",
-    gov_b3t:"Bilim Kurulu", gov_b3d:"Üniversite ve araştırma merkezlerinden akademisyenler.",
-    gov_b4t:"Danışma Kurulu", gov_b4d:"Ulusal ve uluslararası alanında uzman danışmanlar.",
+    gov_sub:"Apikültür Vakfı, piyasada rekabet eden ticari bir oyuncu değil; sektörün üzerine basabileceği sağlam, bağımsız ve bilimsel bir zemindir. Yapımız vakıf senedimizde tanımlıdır; tek amacımız kamu yararı üretmek ve standartları belirlemektir.",
+    gov_organs_l:"Vakfın Organları · Senet Md.7",
+    gov_adv_l:"Danışma Yapıları · Md.12",
+    gov_chair:"Başkan",
+    gov_b1t:"Mütevelli Heyeti", gov_b1d:"Vakfın en yüksek karar organı; kurucu iradeyi ve uzun vadeli yönü temsil eder (Md.8–9).",
+    gov_b2t:"Yönetim Kurulu", gov_b2d:"Vakfın idare ve icra organı (Md.11–12). İlk yönetim kurulu, senedin Geçici 2. maddesiyle görevlendirilmiştir.",
+    gov_b3t:"Bilim Kurulu", gov_b3d:"Üniversite ve araştırma merkezlerinden akademisyenler. Yönetim Kurulu'nun oluşturduğu yardımcı bir yapıdır; senet organı değildir.",
+    gov_b4t:"Danışma Kurulu", gov_b4d:"Ulusal ve uluslararası uzman danışmanlar. Yönetim Kurulu'nun oluşturduğu yardımcı bir yapıdır; senet organı değildir.",
+    off_l:"Resmi Bilgiler",
+    off_k1:"Kurucu", off_v1:"Muzaffer Yıldırım (Md.19)",
+    off_k2:"Kuruluş Malvarlığı", off_v2:"500.000 TL (Md.6)",
+    off_k3:"Tescilli Merkez", off_v3:"Beylikdüzü OSB Mah. Birlik San. Sit. Birlik 2 İş Merkezi Kat:3 No:51, Beylikdüzü / İstanbul (Md.2)",
+    off_k4:"Yönetim Ofisi",
     gov_no1:"Ticaret yapmaz", gov_no2:"Kâr amacı gütmez",
     gov_yes1:"Standart koyar", gov_yes2:"Model üretir", gov_yes3:"Eğitir", gov_yes4:"Yaygınlaştırır",
     gov_stance:"Apikültür Vakfı'nın konumu nettir: piyasanın bir oyuncusu değil, sektörün ortak zemini olmak. Bu bağımsızlık, hem güvenilirliğin hem kamu yararının temelidir.",
@@ -1150,11 +1190,19 @@ const I18N = {
     imp_t6:"Technical guides published", imp_t7:"Youth clubs established", imp_t8:"Digital platform users", imp_t9:"Digital training participants", imp_t10:"International collaborations",
 
     gov_eyebrow:"Governance & Transparency", gov_title:"Our strength comes from transparency.",
-    gov_sub:"Apiculture Foundation is not a commercial player competing in the market, but a solid, independent and scientific ground the sector can stand on. From our board of trustees to our scientific and advisory boards, our only aim is to create public benefit and set standards.",
-    gov_b1t:"Board of Trustees", gov_b1d:"Represents the founding will and long-term direction of the foundation.",
-    gov_b2t:"Executive Board", gov_b2d:"Runs the foundation's activities and operations.",
-    gov_b3t:"Scientific Board", gov_b3d:"Academics from universities and research centers.",
-    gov_b4t:"Advisory Board", gov_b4d:"National and international experts in the field.",
+    gov_sub:"Apiculture Foundation is not a commercial player competing in the market, but a solid, independent and scientific ground the sector can stand on. Our structure is defined by our charter; our only aim is to create public benefit and set standards.",
+    gov_organs_l:"Organs of the Foundation · Charter Art. 7",
+    gov_adv_l:"Advisory Structures · Art. 12",
+    gov_chair:"Chair",
+    gov_b1t:"Board of Trustees", gov_b1d:"The foundation's highest decision organ; represents the founding will and long-term direction (Art. 8–9).",
+    gov_b2t:"Executive Board", gov_b2d:"The foundation's administrative and executive organ (Art. 11–12). The initial board was appointed by Transitional Art. 2 of the charter.",
+    gov_b3t:"Scientific Board", gov_b3d:"Academics from universities and research centers. An auxiliary structure formed by the Executive Board; not a charter organ.",
+    gov_b4t:"Advisory Board", gov_b4d:"National and international experts. An auxiliary structure formed by the Executive Board; not a charter organ.",
+    off_l:"Official Information",
+    off_k1:"Founder", off_v1:"Muzaffer Yıldırım (Art. 19)",
+    off_k2:"Founding Endowment", off_v2:"TRY 500,000 (Art. 6)",
+    off_k3:"Registered Seat", off_v3:"Beylikdüzü OSB Mah. Birlik San. Sit. Birlik 2 İş Merkezi Kat:3 No:51, Beylikdüzü / İstanbul (Art. 2)",
+    off_k4:"Management Office",
     gov_no1:"Doesn't trade", gov_no2:"Non-profit",
     gov_yes1:"Sets standards", gov_yes2:"Builds models", gov_yes3:"Educates", gov_yes4:"Scales",
     gov_stance:"Apiculture Foundation's position is clear: not a player in the market, but the common ground for the sector. This independence is the foundation of both credibility and public benefit.",
