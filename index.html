@@ -276,6 +276,9 @@
   .stance .tr2 .lab{font-family:'Poppins',sans-serif; font-size:10.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--amber); margin-bottom:11px}
   .stance .tr2 .pp{display:flex; flex-wrap:wrap; gap:8px}
   .stance .tr2 .pp span{font-size:12.5px; background:rgba(255,255,255,.06); border:1px solid rgba(249,239,227,.18); padding:6px 11px; border-radius:99px}
+  .stance .tr2 .pp a{font-size:12.5px; background:var(--amber); color:var(--charcoal); font-weight:600; border:1px solid var(--amber); padding:6px 11px; border-radius:99px; transition:.2s}
+  .stance .tr2 .pp a:hover{background:#f39a2e}
+  .stance .tr-note{margin-top:12px; font-size:12.5px; color:rgba(249,239,227,.55)}
 
   .support{background:var(--ecru-2)}
   .ms-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:8px}
@@ -401,6 +404,7 @@
           <a href="#hakkimizda" data-i18n="nav_about">Hakkımızda</a>
           <a href="#manifesto" data-i18n="nav_manifesto">Manifesto</a>
           <a href="#yonetim" data-i18n="nav_gov">Yönetim</a>
+          <a href="senet.html" data-i18n="nav_charter">Vakıf Senedi</a>
         </div>
       </div>
       <div class="nav-item has-drop">
@@ -738,7 +742,8 @@
         <p data-i18n="gov_stance">Apikültür Vakfı'nın konumu nettir: piyasanın bir oyuncusu değil, sektörün ortak zemini olmak. Bu bağımsızlık, hem güvenilirliğin hem kamu yararının temelidir.</p>
         <div class="tr2">
           <div class="lab" data-i18n="gov_tr_l">Şeffaflık Merkezi</div>
-          <div class="pp"><span data-i18n="gov_tr1">Faaliyet Raporları</span><span data-i18n="gov_tr2">Mali Raporlar</span><span data-i18n="gov_tr3">Bağımsız Denetim</span><span data-i18n="gov_tr4">Etik İlkeler</span></div>
+          <div class="pp"><a href="senet.html" data-i18n="gov_tr0">Vakıf Senedi →</a><span data-i18n="gov_tr1">Faaliyet Raporları</span><span data-i18n="gov_tr2">Mali Raporlar</span><span data-i18n="gov_tr3">Bağımsız Denetim</span><span data-i18n="gov_tr4">Etik İlkeler</span></div>
+          <p class="tr-note" data-i18n="gov_tr_note">Faaliyet ve mali raporlar, ilk hesap dönemini takiben bu sayfada yayımlanacaktır.</p>
         </div>
       </div>
     </div>
@@ -825,6 +830,7 @@
         <a href="#akademi" data-i18n="nav_academy">Akademi & Bilim</a>
         <a href="#genclik" data-i18n="nav_youth">Gençlik Kulüpleri</a>
         <a href="#yonetim" data-i18n="nav_gov">Yönetim</a>
+        <a href="senet.html" data-i18n="nav_charter">Vakıf Senedi</a>
       </div>
       <div class="foot-col">
         <div class="foot-h" data-i18n="foot_support_h">Destek Ol</div>
@@ -850,6 +856,7 @@ const I18N = {
     nav_about:"Hakkımızda", nav_activity:"Ne Yapıyoruz", nav_projects:"Projeler", nav_academy:"Akademi & Bilim", nav_std:"Standartlar",
     nav_youth:"Gençlik Kulüpleri", nav_intl:"Uluslararası", nav_gov:"Yönetim", nav_contact:"İletişim", nav_support:"Bağış Yap",
     cat_vakif:"Vakıf", cat_faaliyet:"Çalışma Alanları", cat_akademi:"Akademi & Bilim", nav_manifesto:"Manifesto",
+    nav_charter:"Vakıf Senedi",
     sub_acad:"Apikültür Akademi", sub_res:"Araştırma ve Bilim", sub_km:"Bilgi Merkezi",
     foot_about:"Arıcılık, polinasyon ve sürdürülebilir yaşam için bilim, eğitim ve iş birliğiyle çalışan; kâr amacı gütmeyen bağımsız bir vakıf.",
     foot_contact_h:"İletişim", foot_links_h:"Site Haritası", foot_support_h:"Destek Ol",
@@ -985,7 +992,9 @@ const I18N = {
     gov_yes1:"Standart koyar", gov_yes2:"Model üretir", gov_yes3:"Eğitir", gov_yes4:"Yaygınlaştırır",
     gov_stance:"Apikültür Vakfı'nın konumu nettir: piyasanın bir oyuncusu değil, sektörün ortak zemini olmak. Bu bağımsızlık, hem güvenilirliğin hem kamu yararının temelidir.",
     gov_tr_l:"Şeffaflık Merkezi",
+    gov_tr0:"Vakıf Senedi →",
     gov_tr1:"Faaliyet Raporları", gov_tr2:"Mali Raporlar", gov_tr3:"Bağımsız Denetim", gov_tr4:"Etik İlkeler",
+    gov_tr_note:"Faaliyet ve mali raporlar, ilk hesap dönemini takiben bu sayfada yayımlanacaktır.",
 
     sup_eyebrow:"Katıl & Destek Ol", sup_title:"Geleceğe bir kovan bırakın.",
     sup_sub:"Sürdürülebilir bir ekosistem ve güçlü bir topluluk için yanımızda olun.",
@@ -1014,6 +1023,7 @@ const I18N = {
     nav_about:"About", nav_activity:"What We Do", nav_projects:"Projects", nav_academy:"Academy & Science", nav_std:"Standards",
     nav_youth:"Youth Clubs", nav_intl:"International", nav_gov:"Governance", nav_contact:"Contact", nav_support:"Donate",
     cat_vakif:"Foundation", cat_faaliyet:"Our Work", cat_akademi:"Academy & Science", nav_manifesto:"Manifesto",
+    nav_charter:"Foundation Charter (TR)",
     sub_acad:"Apikültür Academy", sub_res:"Research & Science", sub_km:"Knowledge Center",
     foot_about:"A non-profit, independent foundation working through science, education and collaboration for beekeeping, pollination and sustainable life.",
     foot_contact_h:"Contact", foot_links_h:"Sitemap", foot_support_h:"Support Us",
@@ -1149,7 +1159,9 @@ const I18N = {
     gov_yes1:"Sets standards", gov_yes2:"Builds models", gov_yes3:"Educates", gov_yes4:"Scales",
     gov_stance:"Apiculture Foundation's position is clear: not a player in the market, but the common ground for the sector. This independence is the foundation of both credibility and public benefit.",
     gov_tr_l:"Transparency Center",
+    gov_tr0:"Foundation Charter →",
     gov_tr1:"Activity Reports", gov_tr2:"Financial Reports", gov_tr3:"Independent Audit", gov_tr4:"Code of Ethics",
+    gov_tr_note:"Activity and financial reports will be published here following the first fiscal period.",
 
     sup_eyebrow:"Join & Support", sup_title:"Leave a hive for the future.",
     sup_sub:"Stand with us for a sustainable ecosystem and a strong community.",
