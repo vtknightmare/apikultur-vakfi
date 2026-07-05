@@ -19,6 +19,8 @@ Tek dosyalık statik bir site — derleme adımı, framework ya da bağımlılı
 
 İçerik kaynağı: `Apikultur_Vakfi_Site_Metni.docx` (final taslak, Alican). Marka kuralları: `ApiKultur-BrandGuidline_2026.pdf`. Hukuki kaynak: `apikültür vakıf senedi son.docx`.
 
+**Logo:** Apimaye "A" rozeti — `APIMAYE_brandbook_2025-1.pdf` içindeki vektörden birebir alınmıştır (sarı #FFC828 + beyaz; oran ve renkler değiştirilemez). `assets/img/kurucu-aile.jpg` da aynı brandbook'tan kırpılmıştır; orijinal fotoğraf dosyası geldiğinde aynı adla değiştirilebilir.
+
 **Fotoğraflar:** Unsplash'ten telifsizdir (Unsplash License — ticari kullanım serbest, atıf zorunlu değil; fotoğrafçılar: Vitaly Gariev, Toru Wa, Bernd Dittrich, Bianca Ackermann, Annie Spratt, Damien Tupinier, HiveBoxx, Arwin Neil Baichoo, Andrew Ridley). Vakfın kendi saha fotoğrafları hazır olduğunda `assets/img/` altındaki dosyalar aynı adlarla değiştirilebilir.
 
 ## Güncelleme
