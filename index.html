@@ -107,7 +107,8 @@
   .hero{position:relative; background:var(--charcoal); color:var(--on-dark); overflow:hidden}
   .hero-hc{position:absolute; inset:0; opacity:.06; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 0L56 16v32L28 64 0 48V16z M28 64l28 16v32L28 128 0 112V80z' fill='none' stroke='%23EA8512' stroke-width='2'/%3E%3C/svg%3E"); background-size:56px 100px}
   .pollen{position:absolute; border-radius:50%; background:var(--amber); opacity:.5; pointer-events:none}
-  .hero-inner{position:relative; z-index:2; padding:104px 0 110px; max-width:900px}
+  .hero-inner{position:relative; z-index:2; padding:88px 0 96px; display:grid; grid-template-columns:1.08fr .92fr; gap:56px; align-items:center}
+  .hero-visual img{width:100%; height:540px; object-fit:cover; border-radius:var(--r); display:block; border:1px solid rgba(249,239,227,.16); box-shadow:0 24px 60px -18px rgba(0,0,0,.55)}
   .hero h1{font-size:clamp(36px,5.6vw,66px); font-weight:700; letter-spacing:.05em; line-height:1.08}
   .hero h1 .em{color:var(--amber)}
   .hero p.lede{font-family:'Inter',sans-serif; text-transform:none; font-size:clamp(18px,2vw,22px); color:var(--on-dark-soft); margin-top:26px; max-width:600px; line-height:1.5; font-weight:400}
@@ -118,7 +119,8 @@
   .hero-meta .v{font-size:14px; color:var(--on-dark-soft); margin-top:8px; line-height:1.45}
 
   .reframe{background:var(--ecru-2); border-bottom:1px solid var(--line-2)}
-  .reframe-inner{padding:82px 0; max-width:960px}
+  .reframe-inner{padding:82px 0; display:grid; grid-template-columns:1fr 340px; gap:52px; align-items:center}
+  .reframe-photo{width:100%; height:380px; object-fit:cover; border-radius:var(--r); display:block; box-shadow:var(--shadow)}
   .reframe .big{font-family:'Inter',sans-serif; text-transform:none; font-size:clamp(25px,3.4vw,40px); font-weight:500; line-height:1.32; letter-spacing:-.015em; color:var(--terra-d)}
   .reframe .big b{color:var(--terra); font-weight:700}
   .reframe .sub{margin-top:22px; color:var(--ink-2); max-width:660px; font-size:17px}
@@ -139,6 +141,7 @@
   .about-body h2{font-family:'Inter',sans-serif; font-weight:500; font-size:clamp(24px,3.1vw,36px); color:var(--ink); margin:18px 0 24px; text-transform:none; letter-spacing:-.015em; line-height:1.25}
   .about-body p{color:var(--ink-2); margin-bottom:17px; font-size:16.5px}
   .about-body p strong{color:var(--ink); font-weight:600}
+  .about-photo{width:100%; height:230px; object-fit:cover; border-radius:var(--r); display:block; margin-bottom:18px; box-shadow:var(--shadow)}
   .mv{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:30px; box-shadow:var(--shadow)}
   .mv + .mv{margin-top:18px}
   .mv .label{font-family:'Poppins',sans-serif; font-size:11.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--terra)}
@@ -181,9 +184,10 @@
   .projects{background:var(--ecru)}
   .proj-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
   .pcard{position:relative; background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:30px 28px 26px; overflow:hidden; transition:transform .24s, box-shadow .24s, border-color .24s; display:flex; flex-direction:column; min-height:248px}
-  .pcard::before{content:""; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--terra),var(--amber))}
+  .pcard::before{content:""; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--terra),var(--amber)); z-index:2}
   .pcard:hover{transform:translateY(-6px); box-shadow:var(--shadow); border-color:var(--terra)}
-  .pcard .pnum{position:absolute; right:18px; top:14px; font-family:'Poppins',sans-serif; font-weight:700; font-size:46px; color:rgba(202,70,23,.07); line-height:1}
+  .pcard .pimg{width:calc(100% + 56px); margin:-30px -28px 18px; height:150px; object-fit:cover; display:block}
+  .pcard .pnum{display:none}
   .pcard .pcat{font-family:'Poppins',sans-serif; font-size:10.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--terra)}
   .pcard h3{font-size:17px; margin:12px 0 10px; color:var(--ink); line-height:1.28; max-width:92%}
   .pcard p{font-size:14.5px; color:var(--ink-2); flex:1}
@@ -222,6 +226,7 @@
   .youth .inner{position:relative; z-index:2}
   .youth .sec-head h2{color:#fff} .youth .sec-head p{color:rgba(255,255,255,.88)}
   .youth-lede{font-family:'Inter',sans-serif; max-width:700px; font-size:18px; color:rgba(255,255,255,.92); margin-bottom:36px}
+  .youth-photo{width:100%; height:290px; object-fit:cover; border-radius:var(--r); display:block; margin-bottom:40px; border:1px solid rgba(255,255,255,.28)}
   .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:40px}
   .stat{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.22); border-radius:var(--r); padding:24px}
   .stat .n{font-family:'Poppins',sans-serif; font-size:36px; font-weight:700; color:#fff}
@@ -339,6 +344,10 @@
 
   @media(max-width:980px){
     .comb,.proj-grid{grid-template-columns:1fr 1fr}
+    .hero-inner{grid-template-columns:1fr; gap:40px}
+    .hero-visual img{height:320px}
+    .reframe-inner{grid-template-columns:1fr; gap:32px}
+    .reframe-photo{height:260px}
     .nav-links{display:none}
     .menu-toggle{display:flex}
     .nav-links.open{display:flex; position:absolute; top:74px; left:0; right:0; flex-direction:column; align-items:stretch; background:var(--ecru); padding:14px 28px 22px; gap:2px; border-bottom:1px solid var(--line); max-height:calc(100vh - 74px); overflow-y:auto}
@@ -368,7 +377,9 @@
     .brand .bt span{font-size:8.5px; letter-spacing:.34em}
     .vals-grid,.comb,.proj-grid,.stats,.istats,.std-grid{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr}
-    .hero-inner{padding:70px 0 76px}
+    .hero-inner{padding:64px 0 70px}
+    .hero-visual img{height:240px}
+    .youth-photo{height:200px}
     .contact-box .line{flex-direction:column; gap:3px}
     .contact-box .line .v{text-align:left}
     .official .line{flex-direction:column; gap:3px}
@@ -451,29 +462,35 @@
 <section class="hero" id="top" style="padding:0" tabindex="-1">
   <div class="hero-hc"></div>
   <div class="wrap hero-inner">
-    <span class="eyebrow od" data-i18n="hero_eyebrow">Apikültür Vakfı · Doğayı Geleceğe Taşır</span>
-    <h1 data-i18n-html="hero_title">MESELE SADECE BAL DEĞİL.<br><span class='em'>MESELE, YAŞAMIN TA KENDİSİ.</span></h1>
-    <p class="lede" data-i18n="hero_lede">Bir arının çiçekten çiçeğe yolculuğu, koca bir ekosistemi ayakta tutar. Biz bu döngünün güvencesiyiz; bilim, eğitim ve köklü bir kültürle arıcılığın geleceğini, dolayısıyla yarının tarımını ve doğasını bugünden kuruyoruz.</p>
-    <div class="hero-cta">
-      <a href="#faaliyet" class="btn btn-amber" data-i18n="hero_cta1">Ne Yapıyoruz?</a>
-      <a href="#destek" class="btn btn-ghost od" data-i18n="hero_cta2">Harekete Geç</a>
+    <div class="hero-copy">
+      <span class="eyebrow od" data-i18n="hero_eyebrow">Apikültür Vakfı · Doğayı Geleceğe Taşır</span>
+      <h1 data-i18n-html="hero_title">MESELE SADECE BAL DEĞİL.<br><span class='em'>MESELE, YAŞAMIN TA KENDİSİ.</span></h1>
+      <p class="lede" data-i18n="hero_lede">Bir arının çiçekten çiçeğe yolculuğu, koca bir ekosistemi ayakta tutar. Biz bu döngünün güvencesiyiz; bilim, eğitim ve köklü bir kültürle arıcılığın geleceğini, dolayısıyla yarının tarımını ve doğasını bugünden kuruyoruz.</p>
+      <div class="hero-cta">
+        <a href="#faaliyet" class="btn btn-amber" data-i18n="hero_cta1">Ne Yapıyoruz?</a>
+        <a href="#destek" class="btn btn-ghost od" data-i18n="hero_cta2">Harekete Geç</a>
+      </div>
+      <div class="hero-meta">
+        <div class="item"><div class="k" data-i18n="hero_m1k">Bilimin İzinde</div><div class="v" data-i18n="hero_m1v">Ölçülebilir, kanıta dayalı araştırma ve ekosistem sağlığı.</div></div>
+        <div class="item"><div class="k" data-i18n="hero_m2k">Köklerin Gücü</div><div class="v" data-i18n="hero_m2v">Yüzyıllık geleneği modern tarımla buluşturan bilgi ağı.</div></div>
+        <div class="item"><div class="k" data-i18n="hero_m3k">Ortak Gelecek</div><div class="v" data-i18n="hero_m3v">Kamu yararına, bağımsız ve yaşam odaklı bir duruş.</div></div>
+      </div>
     </div>
-    <div class="hero-meta">
-      <div class="item"><div class="k" data-i18n="hero_m1k">Bilimin İzinde</div><div class="v" data-i18n="hero_m1v">Ölçülebilir, kanıta dayalı araştırma ve ekosistem sağlığı.</div></div>
-      <div class="item"><div class="k" data-i18n="hero_m2k">Köklerin Gücü</div><div class="v" data-i18n="hero_m2v">Yüzyıllık geleneği modern tarımla buluşturan bilgi ağı.</div></div>
-      <div class="item"><div class="k" data-i18n="hero_m3k">Ortak Gelecek</div><div class="v" data-i18n="hero_m3v">Kamu yararına, bağımsız ve yaşam odaklı bir duruş.</div></div>
-    </div>
+    <div class="hero-visual"><img src="assets/img/hero-beekeeper.jpg" fetchpriority="high" alt="Arıcı, renkli kovanların önünde petek çerçevesi taşıyor" data-i18n-alt="img_hero"></div>
   </div>
 </section>
 
 <section class="reframe" style="padding:0">
   <div class="wrap reframe-inner reveal">
-    <p class="big" data-i18n-html="reframe_big">Soframızdaki her <b>üç lokmadan biri</b> onlara emanet. Küresel gıda üretiminin belkemiği olan tozlaşma, arıların kanatlarında gerçekleşiyor.</p>
-    <p class="sub" data-i18n="reframe_sub">Arıyı korumak; salt bir böcek türünü değil, biyoçeşitliliği, gıda güvenliğini ve kırsaldaki yaşamı korumaktır. Biz kovanın ötesine bakıyor; bilimin, tarımın, teknolojinin ve insanın doğayla bağının tam merkezinde çalışıyoruz.</p>
-    <div class="scope-strip">
-      <span class="sc" data-i18n="sc1">Bilim</span><span class="sc" data-i18n="sc2">Eğitim</span><span class="sc" data-i18n="sc3">Tarım</span><span class="sc" data-i18n="sc4">Ekonomi</span><span class="sc" data-i18n="sc5">Kültür</span><span class="sc" data-i18n="sc6">Teknoloji</span><span class="sc" data-i18n="sc7">İyi Oluş</span>
-      <span class="sc-tail" data-i18n="sc_tail">Arıcılığın dokunduğu her alan, bizim çalışma alanımız.</span>
+    <div>
+      <p class="big" data-i18n-html="reframe_big">Soframızdaki her <b>üç lokmadan biri</b> onlara emanet. Küresel gıda üretiminin belkemiği olan tozlaşma, arıların kanatlarında gerçekleşiyor.</p>
+      <p class="sub" data-i18n="reframe_sub">Arıyı korumak; salt bir böcek türünü değil, biyoçeşitliliği, gıda güvenliğini ve kırsaldaki yaşamı korumaktır. Biz kovanın ötesine bakıyor; bilimin, tarımın, teknolojinin ve insanın doğayla bağının tam merkezinde çalışıyoruz.</p>
+      <div class="scope-strip">
+        <span class="sc" data-i18n="sc1">Bilim</span><span class="sc" data-i18n="sc2">Eğitim</span><span class="sc" data-i18n="sc3">Tarım</span><span class="sc" data-i18n="sc4">Ekonomi</span><span class="sc" data-i18n="sc5">Kültür</span><span class="sc" data-i18n="sc6">Teknoloji</span><span class="sc" data-i18n="sc7">İyi Oluş</span>
+        <span class="sc-tail" data-i18n="sc_tail">Arıcılığın dokunduğu her alan, bizim çalışma alanımız.</span>
+      </div>
     </div>
+    <img class="reframe-photo" src="assets/img/bee-flower.jpg" loading="lazy" alt="Pembe çiçekte polen toplayan bal arısı yakın çekim" data-i18n-alt="img_reframe">
   </div>
 </section>
 
@@ -488,6 +505,7 @@
         <p data-i18n-html="about_p2">Araştırma, eğitim, inovasyon ve farkındalık çalışmalarıyla hem arıcıların hem toplumun bilgi düzeyini yükseltir; arıların korunmasını ve biyoçeşitliliği temel amaç sayar.</p>
       </div>
       <div class="reveal">
+        <img class="about-photo" src="assets/img/apiary-smoker.jpg" loading="lazy" alt="Arı bakımında körük kullanan arıcı" data-i18n-alt="img_about">
         <div class="mv"><div class="label" data-i18n="about_vlabel">Vizyon</div><h3 data-i18n="about_vtitle">Yaşamı merkeze alan bir referans.</h3><p data-i18n="about_vtext">Arıyı, polinasyonu ve biyoçeşitliliği merkeze alarak; bilim, eğitim, teknoloji ve kültürü buluşturup daha dirençli ekosistemler ve daha güçlü toplumlar oluşturmak.</p></div>
         <div class="mv"><div class="label" data-i18n="about_mlabel">Misyon</div><h3 data-i18n="about_mtitle">Bilim, eğitim ve iş birliği.</h3><p data-i18n="about_mtext">Arıcılığı eğitim, araştırma, inovasyon ve kültürel mirasın korunması ekseninde destekleyerek yaşamın devamlılığına katkı sağlamak.</p></div>
       </div>
@@ -549,12 +567,12 @@
       <p data-i18n="proj_sub">Tamamlanan, yürüyen ve geliştirilen projelerimizden bir seçki.</p>
     </div>
     <div class="proj-grid">
-      <div class="pcard reveal"><span class="pnum">01</span><div class="pcat" data-i18n="proj1c">Eğitim & Farkındalık</div><h3 data-i18n="proj1t">Arı Dostum Olur Musun?</h3><p data-i18n="proj1d">Kartal'da 30 okulda 14.895 öğrenciye ulaşan eğitim ve farkındalık iş birliği (2024–2025).</p><span class="pstatus" data-i18n="st_done">Tamamlandı</span></div>
-      <a href="#genclik" class="pcard linked reveal"><span class="pnum">02</span><div class="pcat" data-i18n="proj2c">Gençlik · Erasmus+</div><h3 data-i18n="proj2t">Apikültür Gençlik Kulüpleri</h3><p data-i18n="proj2d">Okullarda genç arıcı kulüpleri; ICYB iş birliğiyle Türkiye'yi IMYB'de temsil. İncele →</p><span class="pstatus live" data-i18n="st_live">Başvurular açık</span></a>
-      <div class="pcard reveal"><span class="pnum">03</span><div class="pcat" data-i18n="proj3c">Polinasyon & Tarım</div><h3 data-i18n="proj3t">Türkiye Arı Koridoru</h3><p data-i18n="proj3d">Belediyeler ve kamuyla yol kenarlarını ve boş alanları polinatör dostu koridorlara dönüştürmek.</p><span class="pstatus" data-i18n="st_plan">Planlama</span></div>
-      <div class="pcard reveal"><span class="pnum">04</span><div class="pcat" data-i18n="proj4c">Sosyal Kalkınma</div><h3 data-i18n="proj4t">Kadın ve Genç Arıcı Programı</h3><p data-i18n="proj4d">Kadın ve genç arıcılar için eğitim, mentorluk, kovan desteği ve girişimcilik.</p><span class="pstatus" data-i18n="st_dev">Geliştirme</span></div>
-      <div class="pcard reveal"><span class="pnum">05</span><div class="pcat" data-i18n="proj5c">Kalite & Miras</div><h3 data-i18n="proj5t">Coğrafi İşaret ve Yerel Değerler</h3><p data-i18n="proj5d">Yerel arı ürünlerinin coğrafi işaret tesciliyle korunması ve uluslararası pazarda değer kazanması.</p><span class="pstatus" data-i18n="st_dev">Geliştirme</span></div>
-      <div class="pcard reveal"><span class="pnum">06</span><div class="pcat" data-i18n="proj6c">Bilim & İyi Oluş</div><h3 data-i18n="proj6t">Apiterapi ve Apiturizm Araştırmaları</h3><p data-i18n="proj6d">Arı ürünlerinin sağlık etkilerine dair bilimsel çalışmalar; doğa temelli iyi oluş ve apiturizm modelleri.</p><span class="pstatus" data-i18n="st_research">Araştırma</span></div>
+      <div class="pcard reveal"><img class="pimg" src="assets/img/p1-bee-friend.jpg" loading="lazy" alt="Gün batımında arılarla dolu petek çerçevesini tutan el" data-i18n-alt="img_p1"><span class="pnum">01</span><div class="pcat" data-i18n="proj1c">Eğitim & Farkındalık</div><h3 data-i18n="proj1t">Arı Dostum Olur Musun?</h3><p data-i18n="proj1d">Kartal'da 30 okulda 14.895 öğrenciye ulaşan eğitim ve farkındalık iş birliği (2024–2025).</p><span class="pstatus" data-i18n="st_done">Tamamlandı</span></div>
+      <a href="#genclik" class="pcard linked reveal"><img class="pimg" src="assets/img/p2-club-frame.jpg" loading="lazy" alt="Bal petekleriyle dolu ahşap çerçeveler" data-i18n-alt="img_p2"><span class="pnum">02</span><div class="pcat" data-i18n="proj2c">Gençlik · Erasmus+</div><h3 data-i18n="proj2t">Apikültür Gençlik Kulüpleri</h3><p data-i18n="proj2d">Okullarda genç arıcı kulüpleri; ICYB iş birliğiyle Türkiye'yi IMYB'de temsil. İncele →</p><span class="pstatus live" data-i18n="st_live">Başvurular açık</span></a>
+      <div class="pcard reveal"><img class="pimg" src="assets/img/p3-corridor-lavender.jpg" loading="lazy" alt="Ağaçlara uzanan mor lavanta tarlası" data-i18n-alt="img_p3"><span class="pnum">03</span><div class="pcat" data-i18n="proj3c">Polinasyon & Tarım</div><h3 data-i18n="proj3t">Türkiye Arı Koridoru</h3><p data-i18n="proj3d">Belediyeler ve kamuyla yol kenarlarını ve boş alanları polinatör dostu koridorlara dönüştürmek.</p><span class="pstatus" data-i18n="st_plan">Planlama</span></div>
+      <div class="pcard reveal"><img class="pimg" src="assets/img/p4-women-planting.jpg" loading="lazy" alt="Beyaz koruyucu giysili arıcı kovan başında" data-i18n-alt="img_p4"><span class="pnum">04</span><div class="pcat" data-i18n="proj4c">Sosyal Kalkınma</div><h3 data-i18n="proj4t">Kadın ve Genç Arıcı Programı</h3><p data-i18n="proj4d">Kadın ve genç arıcılar için eğitim, mentorluk, kovan desteği ve girişimcilik.</p><span class="pstatus" data-i18n="st_dev">Geliştirme</span></div>
+      <div class="pcard reveal"><img class="pimg" src="assets/img/p5-honey-jar.jpg" loading="lazy" alt="Bal kavanozuna bal damlatan ahşap kaşık" data-i18n-alt="img_p5"><span class="pnum">05</span><div class="pcat" data-i18n="proj5c">Kalite & Miras</div><h3 data-i18n="proj5t">Coğrafi İşaret ve Yerel Değerler</h3><p data-i18n="proj5d">Yerel arı ürünlerinin coğrafi işaret tesciliyle korunması ve uluslararası pazarda değer kazanması.</p><span class="pstatus" data-i18n="st_dev">Geliştirme</span></div>
+      <div class="pcard reveal"><img class="pimg" src="assets/img/p6-meadow.jpg" loading="lazy" alt="Altın ışıkta kovana dönen arılar" data-i18n-alt="img_p6"><span class="pnum">06</span><div class="pcat" data-i18n="proj6c">Bilim & İyi Oluş</div><h3 data-i18n="proj6t">Apiterapi ve Apiturizm Araştırmaları</h3><p data-i18n="proj6d">Arı ürünlerinin sağlık etkilerine dair bilimsel çalışmalar; doğa temelli iyi oluş ve apiturizm modelleri.</p><span class="pstatus" data-i18n="st_research">Araştırma</span></div>
     </div>
   </div>
 </section>
@@ -567,6 +585,7 @@
       <h2 data-i18n="youth_title">Geleceğin Kraliçe ve İşçi Arıları</h2>
     </div>
     <p class="youth-lede reveal" data-i18n="youth_lede">Arıcılığın geleceği, toprakla yeniden bağ kuran gençlerin ellerinde şekillenecek. ICYB iş birliğiyle liselerde Apikültür Gençlik Kulüpleri kuruyoruz; Arı Dostluk Kovanları sayesinde gençler doğanın matematiğini sahada öğreniyor. Türkiye'yi her yıl IMYB'de temsil edecek takımı bu okullardan seçiyoruz.</p>
+    <img class="youth-photo reveal" src="assets/img/youth-frame.jpg" loading="lazy" alt="Eldivenli eller bal peteği çerçevesini inceliyor" data-i18n-alt="img_youth">
     <div class="stats reveal">
       <div class="stat"><div class="n">14.895</div><div class="l" data-i18n="youth_s1l">İş birliği projeleriyle ulaşılan öğrenci (2024–2025)</div></div>
       <div class="stat"><div class="n">30</div><div class="l" data-i18n="youth_s2l">Etkinlik yapılan okul</div></div>
@@ -901,6 +920,16 @@ const I18N = {
     hero_m1k:"Bilimin İzinde", hero_m1v:"Ölçülebilir, kanıta dayalı araştırma ve ekosistem sağlığı.",
     hero_m2k:"Köklerin Gücü", hero_m2v:"Yüzyıllık geleneği modern tarımla buluşturan bilgi ağı.",
     hero_m3k:"Ortak Gelecek", hero_m3v:"Kamu yararına, bağımsız ve yaşam odaklı bir duruş.",
+    img_hero:"Arıcı, renkli kovanların önünde petek çerçevesi taşıyor",
+    img_reframe:"Pembe çiçekte polen toplayan bal arısı yakın çekim",
+    img_about:"Arı bakımında körük kullanan arıcı",
+    img_youth:"Eldivenli eller bal peteği çerçevesini inceliyor",
+    img_p1:"Gün batımında arılarla dolu petek çerçevesini tutan el",
+    img_p2:"Bal petekleriyle dolu ahşap çerçeveler",
+    img_p3:"Ağaçlara uzanan mor lavanta tarlası",
+    img_p4:"Beyaz koruyucu giysili arıcı kovan başında",
+    img_p5:"Bal kavanozuna bal damlatan ahşap kaşık",
+    img_p6:"Altın ışıkta kovana dönen arılar",
 
     reframe_big:"Soframızdaki her <b>üç lokmadan biri</b> onlara emanet. Küresel gıda üretiminin belkemiği olan tozlaşma, arıların kanatlarında gerçekleşiyor.",
     reframe_sub:"Arıyı korumak; salt bir böcek türünü değil, biyoçeşitliliği, gıda güvenliğini ve kırsaldaki yaşamı korumaktır. Biz kovanın ötesine bakıyor; bilimin, tarımın, teknolojinin ve insanın doğayla bağının tam merkezinde çalışıyoruz.",
@@ -1076,6 +1105,16 @@ const I18N = {
     hero_m1k:"Led by Science", hero_m1v:"Measurable, evidence-based research and ecosystem health.",
     hero_m2k:"Power of Roots", hero_m2v:"A knowledge network uniting centuries of tradition with modern agriculture.",
     hero_m3k:"Shared Future", hero_m3v:"An independent, life-centered stance for the public good.",
+    img_hero:"Beekeeper carrying a honeycomb frame in front of colorful hives",
+    img_reframe:"Close-up of a honeybee collecting pollen on pink flowers",
+    img_about:"Beekeeper using a smoker while tending bees",
+    img_youth:"Gloved hands inspecting a honeycomb frame",
+    img_p1:"Hand holding a bee-covered honeycomb frame at sunset",
+    img_p2:"Wooden frames full of honeycomb",
+    img_p3:"Purple lavender field stretching to the trees",
+    img_p4:"Beekeeper in white protective suit at the hives",
+    img_p5:"Wooden dipper drizzling honey into a jar",
+    img_p6:"Bees returning to the hive in golden light",
 
     reframe_big:"<b>One in three</b> bites on our table is entrusted to them. Pollination — the backbone of global food production — happens on the wings of bees.",
     reframe_sub:"To protect the bee is to protect not just a species, but biodiversity, food security and rural life. We look beyond the hive — working at the very center of science, agriculture, technology and the human bond with nature.",
@@ -1237,6 +1276,7 @@ function applyLang(lang){
   document.documentElement.lang=lang;
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(I18N[lang][k]!==undefined) el.textContent=I18N[lang][k];});
   document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.getAttribute('data-i18n-html'); if(I18N[lang][k]!==undefined) el.innerHTML=I18N[lang][k];});
+  document.querySelectorAll('[data-i18n-alt]').forEach(el=>{const k=el.getAttribute('data-i18n-alt'); if(I18N[lang][k]!==undefined) el.setAttribute('alt', I18N[lang][k]);});
   document.querySelectorAll('#lang button').forEach(b=>{const on=b.dataset.lang===lang; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on);});
   document.title=I18N[lang].doc_title;
   try{localStorage.setItem('apikultur-lang', lang);}catch(e){}

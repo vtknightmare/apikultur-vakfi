@@ -12,10 +12,14 @@ Tek dosyalık statik bir site — derleme adımı, framework ya da bağımlılı
 | Dosya | İçerik |
 |---|---|
 | `index.html` | Sitenin tamamı: içerik, stil (inline CSS), davranış (vanilla JS), TR/EN çeviri sözlükleri |
-| `assets/` | favicon, apple-touch-icon, sosyal paylaşım görseli (og-image) |
+| `senet.html` | Vakıf senedinin tam metni (yazdırılabilir; PDF: `assets/vakif-senedi.pdf`) |
+| `assets/` | favicon, apple-touch-icon, og-image, senet PDF'i |
+| `assets/img/` | Bölüm ve proje fotoğrafları |
 | `robots.txt`, `sitemap.xml` | Arama motoru dosyaları |
 
-İçerik kaynağı: `Apikultur_Vakfi_Site_Metni.docx` (final taslak, Alican).
+İçerik kaynağı: `Apikultur_Vakfi_Site_Metni.docx` (final taslak, Alican). Marka kuralları: `ApiKultur-BrandGuidline_2026.pdf`. Hukuki kaynak: `apikültür vakıf senedi son.docx`.
+
+**Fotoğraflar:** Unsplash'ten telifsizdir (Unsplash License — ticari kullanım serbest, atıf zorunlu değil; fotoğrafçılar: Vitaly Gariev, Toru Wa, Bernd Dittrich, Bianca Ackermann, Annie Spratt, Damien Tupinier, HiveBoxx, Arwin Neil Baichoo, Andrew Ridley). Vakfın kendi saha fotoğrafları hazır olduğunda `assets/img/` altındaki dosyalar aynı adlarla değiştirilebilir.
 
 ## Güncelleme
 
